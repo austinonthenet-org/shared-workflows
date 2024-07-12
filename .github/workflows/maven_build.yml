@@ -16,10 +16,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-
+  my-job:
     runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
 
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
