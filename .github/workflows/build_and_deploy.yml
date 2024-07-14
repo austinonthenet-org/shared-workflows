@@ -22,7 +22,7 @@ jobs:
       - name: get-contents
         id: vars
         run: |
-          echo "settings=$(cat ./settings.xml)" >> $GITHUB_OUTPUT
+          echo "num_lines=$(wc -l ./settings.xml)" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
