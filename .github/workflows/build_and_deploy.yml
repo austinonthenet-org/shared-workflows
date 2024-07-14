@@ -23,6 +23,8 @@ jobs:
         id: vars
         run: |
           echo "num_lines=$(wc -l ./settings.xml)" >> $GITHUB_OUTPUT
+      - name: Test output
+        run: echo "num_lines = ${{ steps.vars.outputs.num_lines }}"
 
   build:
     runs-on: ubuntu-latest
