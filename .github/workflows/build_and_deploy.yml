@@ -19,6 +19,9 @@ jobs:
       - name: write-settings-xml
         run: |
           echo "${{vars.MVN_SETTINGS_XML}}" > ./settings.xml
+      - name: get-contents
+        id: vars
+        run: |
           echo "settings=$(cat ./settings.xml)" >> $GITHUB_OUTPUT
 
   build:
