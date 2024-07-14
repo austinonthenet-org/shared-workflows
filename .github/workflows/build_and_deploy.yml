@@ -19,7 +19,7 @@ jobs:
       - name: write-settings-xml
         run: |
           echo "${{vars.MVN_SETTINGS_XML}}" > ./settings.xml
-          cat ./settings.xml
+          echo "settings=$(cat ./settings.xml)" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
